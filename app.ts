@@ -1,5 +1,6 @@
 /// <reference path="node_modules/angular2/ts/typings/node/node.d.ts"/>
 /// <reference path="node_modules/angular2/typings/browser.d.ts"/>
+//49 132%
 
 import {bootstrap} from "angular2/platform/browser";
 import {Component} from "angular2/core";
@@ -61,7 +62,6 @@ class Article {
       </ul>
     </div>
   `
-
 })
 class ArticleComponent {
 	article: Article;
@@ -76,9 +76,6 @@ class ArticleComponent {
 		return false;
 	}
 }
-
-
-
 
 @Component({
 	selector: 'reddit',
@@ -123,7 +120,10 @@ class RedditApp {
 	}
 	addArticle(title: HTMLInputElement, link: HTMLInputElement): void {
 
-		console.log(`Adding article title: ${title.value} and link: ${link.value}`);
+		// console.log(`Adding article title: ${title.value} and link: ${link.value}`);
+		this.articles.push(new Article(title.value, link.value, 0));
+		title.value = '';
+		link.value = '';
 	}
 }
 
